@@ -4,3 +4,6 @@
 [submodule "manager"]
 	path = manager
 	url = https://github.com/TheBitTwisters/BibleQuizManager
+[submodule "player"]
+	path = player
+	url = https://github.com/TheBitTwisters/BibleQuizPlayer
