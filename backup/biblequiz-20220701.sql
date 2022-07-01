@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `answers` (
   CONSTRAINT `fk_anwer_player` FOREIGN KEY (`player_id`) REFERENCES `players` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table biblequiz.answers: ~0 rows (approximately)
+-- Dumping data for table biblequiz.answers: ~2 rows (approximately)
 /*!40000 ALTER TABLE `answers` DISABLE KEYS */;
 REPLACE INTO `answers` (`id`, `game_id`, `question_id`, `player_id`, `answer`, `score`, `submitted_at`) VALUES
 	(1, 1, 4, 1, 'T', 1, '2022-07-01 17:12:10'),
@@ -119,13 +119,14 @@ CREATE TABLE IF NOT EXISTS `managers` (
   `name` varchar(16) NOT NULL,
   `pin` varchar(60) NOT NULL,
   `current_game_id` int(11) NOT NULL DEFAULT 0,
+  `last_active_at` datetime NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
 -- Dumping data for table biblequiz.managers: ~1 rows (approximately)
 /*!40000 ALTER TABLE `managers` DISABLE KEYS */;
-REPLACE INTO `managers` (`id`, `name`, `pin`, `current_game_id`) VALUES
-	(1, 'shyne', '$2a$04$RdpoaMnOoJnXNjGPQ0V4guCNILk1OJXQ4iySEfp3cjdp9zIJDJnWK', 0);
+REPLACE INTO `managers` (`id`, `name`, `pin`, `current_game_id`, `last_active_at`) VALUES
+	(1, 'shyne', '$2a$04$RdpoaMnOoJnXNjGPQ0V4guCNILk1OJXQ4iySEfp3cjdp9zIJDJnWK', 0, '2022-07-01 22:30:09');
 /*!40000 ALTER TABLE `managers` ENABLE KEYS */;
 
 -- Dumping structure for table biblequiz.players
@@ -139,7 +140,7 @@ CREATE TABLE IF NOT EXISTS `players` (
   UNIQUE KEY `name` (`name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table biblequiz.players: ~0 rows (approximately)
+-- Dumping data for table biblequiz.players: ~1 rows (approximately)
 /*!40000 ALTER TABLE `players` DISABLE KEYS */;
 REPLACE INTO `players` (`id`, `active`, `name`, `fullname`, `joined_at`) VALUES
 	(1, 1, 'michael01angelo', 'Michael Angelo', '2022-07-01 16:40:50');
