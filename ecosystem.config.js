@@ -8,6 +8,11 @@ module.exports = {
       exec_mode: 'cluster',
       watch: true
     },
-
+    {
+      name: 'biblequiz-player',
+      cwd: './player',
+      script: 'npm start',
+      watch: true
+    }
   ]
 }
