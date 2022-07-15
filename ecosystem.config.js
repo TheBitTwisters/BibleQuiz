@@ -13,6 +13,12 @@ module.exports = {
       cwd: './player',
       script: 'npm start',
       watch: true
+    },
+    {
+      name: 'biblequiz-manager',
+      cwd: './manager',
+      script: 'npm start',
+      watch: true
     }
   ]
 }
