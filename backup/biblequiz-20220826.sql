@@ -14,10 +14,12 @@
 
 
 -- Dumping database structure for biblequiz
+DROP DATABASE IF EXISTS `biblequiz`;
 CREATE DATABASE IF NOT EXISTS `biblequiz` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
 USE `biblequiz`;
 
 -- Dumping structure for table biblequiz.answers
+DROP TABLE IF EXISTS `answers`;
 CREATE TABLE IF NOT EXISTS `answers` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `game_id` int(11) NOT NULL,
@@ -364,6 +366,7 @@ REPLACE INTO `answers` (`id`, `game_id`, `question_id`, `attendance_id`, `answer
 /*!40000 ALTER TABLE `answers` ENABLE KEYS */;
 
 -- Dumping structure for table biblequiz.attendances
+DROP TABLE IF EXISTS `attendances`;
 CREATE TABLE IF NOT EXISTS `attendances` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `game_id` int(11) NOT NULL,
@@ -414,6 +417,7 @@ REPLACE INTO `attendances` (`id`, `game_id`, `member_id`, `group_id`, `name`, `p
 /*!40000 ALTER TABLE `attendances` ENABLE KEYS */;
 
 -- Dumping structure for table biblequiz.choices
+DROP TABLE IF EXISTS `choices`;
 CREATE TABLE IF NOT EXISTS `choices` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `question_id` int(11) NOT NULL,
@@ -719,6 +723,7 @@ REPLACE INTO `choices` (`id`, `question_id`, `label`, `value`, `is_answer`) VALU
 /*!40000 ALTER TABLE `choices` ENABLE KEYS */;
 
 -- Dumping structure for table biblequiz.games
+DROP TABLE IF EXISTS `games`;
 CREATE TABLE IF NOT EXISTS `games` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `active` tinyint(1) NOT NULL DEFAULT 1,
@@ -741,6 +746,7 @@ REPLACE INTO `games` (`id`, `active`, `title`, `date`, `current_question_id`, `c
 /*!40000 ALTER TABLE `games` ENABLE KEYS */;
 
 -- Dumping structure for table biblequiz.gamescores
+DROP TABLE IF EXISTS `gamescores`;
 CREATE TABLE IF NOT EXISTS `gamescores` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `game_id` int(11) NOT NULL,
@@ -801,6 +807,7 @@ REPLACE INTO `gamescores` (`id`, `game_id`, `group_id`, `score`) VALUES
 /*!40000 ALTER TABLE `gamescores` ENABLE KEYS */;
 
 -- Dumping structure for table biblequiz.groups
+DROP TABLE IF EXISTS `groups`;
 CREATE TABLE IF NOT EXISTS `groups` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `active` tinyint(1) unsigned NOT NULL DEFAULT 1,
@@ -832,6 +839,7 @@ REPLACE INTO `groups` (`id`, `active`, `name`, `created_at`) VALUES
 /*!40000 ALTER TABLE `groups` ENABLE KEYS */;
 
 -- Dumping structure for table biblequiz.levels
+DROP TABLE IF EXISTS `levels`;
 CREATE TABLE IF NOT EXISTS `levels` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(32) NOT NULL,
@@ -849,6 +857,7 @@ REPLACE INTO `levels` (`id`, `name`, `score`) VALUES
 /*!40000 ALTER TABLE `levels` ENABLE KEYS */;
 
 -- Dumping structure for table biblequiz.managers
+DROP TABLE IF EXISTS `managers`;
 CREATE TABLE IF NOT EXISTS `managers` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(16) NOT NULL,
@@ -863,6 +872,7 @@ REPLACE INTO `managers` (`id`, `name`, `pin`) VALUES
 /*!40000 ALTER TABLE `managers` ENABLE KEYS */;
 
 -- Dumping structure for table biblequiz.members
+DROP TABLE IF EXISTS `members`;
 CREATE TABLE IF NOT EXISTS `members` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `active` tinyint(1) NOT NULL DEFAULT 1,
@@ -908,6 +918,7 @@ REPLACE INTO `members` (`id`, `active`, `group_id`, `last_name`, `first_name`, `
 /*!40000 ALTER TABLE `members` ENABLE KEYS */;
 
 -- Dumping structure for table biblequiz.questions
+DROP TABLE IF EXISTS `questions`;
 CREATE TABLE IF NOT EXISTS `questions` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `active` tinyint(1) NOT NULL DEFAULT 1,
@@ -1060,6 +1071,7 @@ REPLACE INTO `questions` (`id`, `active`, `game_id`, `level_id`, `type_id`, `ord
 /*!40000 ALTER TABLE `questions` ENABLE KEYS */;
 
 -- Dumping structure for table biblequiz.quest_types
+DROP TABLE IF EXISTS `quest_types`;
 CREATE TABLE IF NOT EXISTS `quest_types` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(32) NOT NULL,
