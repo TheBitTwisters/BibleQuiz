@@ -4,7 +4,7 @@ module.exports = {
       name: 'biblequiz-server',
       cwd: './server/',
       script: 'bq-api.js',
-      instances: '8',
+      instances: '1',
       exec_mode: 'cluster',
       watch: true
     },
@@ -14,7 +14,7 @@ module.exports = {
       script: 'npm',
       args: 'start',
       watch: true,
-      instances: '2',
+      instances: '1',
       exec_mode: 'cluster'
     },
     {
@@ -23,7 +23,7 @@ module.exports = {
       script: 'npm',
       args: 'start',
       watch: true,
-      instances: '2',
+      instances: '1',
       exec_mode: 'cluster'
     }
   ]
